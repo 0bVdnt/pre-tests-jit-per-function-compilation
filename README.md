@@ -1,4 +1,4 @@
-# WasmEdge LFX Mentorship Pre-tests — JIT Per-function Compilation
+# WasmEdge LFX Mentorship Pre-tests - JIT Per-function Compilation
 
 This repository contains my submission materials for the **WasmEdge LFX Mentorship pre-test** for the project:
 
@@ -22,6 +22,7 @@ Pre-test-02/
 **Location:** `Pre-test-01/README.md`
 
 Contains:
+
 - The computed final value for the given C++ loop snippet
 - A step-by-step execution trace
 
@@ -30,8 +31,9 @@ Contains:
 ## Pre-test 02
 
 **Goal:** Prove basic understanding of LLVM by:
-1) Designing an LLVM IR module (`.ll`) as input  
-2) Implementing a C++ tool using LLVM APIs that parses the module and prints all functions
+
+1. Designing an LLVM IR module (`.ll`) as input
+2. Implementing a C++ tool using LLVM APIs that parses the module and prints all functions
 
 ### Files
 
@@ -39,7 +41,9 @@ Contains:
 - **LLVM API tool:** `Pre-test-02/func_lister.cpp`
 
 ### What the tool prints
+
 For each function in the module, it prints:
+
 - Whether it is a **declaration** or a **definition**
 - The **return type**
 - The **function name**
@@ -54,6 +58,7 @@ For each function in the module, it prints:
 - A C++ compiler (e.g., `clang++` or `g++`).
 
 ### LLVM Version Note
+
 The IR uses opaque pointers (`ptr`). This is the default in modern LLVM releases (LLVM 15+).  
 If you are using an older LLVM toolchain that does not support `ptr`, you may need to replace `ptr` with `i8*` in `input.ll`.
 
@@ -73,7 +78,7 @@ clang++ -std=c++17 Pre-test-02/func_lister.cpp -o Pre-test-02/func_lister \
 ### Example Output
 
 ```text
-Functions found in module 'input.ll':
+Functions found in module 'Pre-test-02/input.ll':
  [decl] i32 @puts(ptr)
  [decl] double @sqrt(double)
  [def] i32 @add(i32 %a, i32 %b)
