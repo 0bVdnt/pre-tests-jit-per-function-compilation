@@ -7,7 +7,7 @@
 
 // Parse an LLVM IR module and print a compact function inventory.
 // The listing includes declaration/definition kind and signature details.
-int funcLister(const char *progName, const char *module) {
+int FuncLister(const char *progName, const char *module) {
   llvm::LLVMContext Context;
   llvm::SMDiagnostic Err;
   std::unique_ptr<llvm::Module> M = llvm::parseIRFile(module, Err, Context);
@@ -57,5 +57,5 @@ int main(int argc, char **argv) {
     llvm::errs() << "Usage: " << argv[0] << " <input.ll>\n";
     return 1;
   }
-  return funcLister(argv[0], argv[1]);
+  return FuncLister(argv[0], argv[1]);
 }

@@ -14,7 +14,8 @@
 ## Build
 
 ```bash
-clang++ func_lister.cpp -o func_lister $(llvm-config --cxxflags --ldflags --libs core irreader support)
+clang++ -std=c++17 func_lister.cpp -o func_lister \
+  $(llvm-config --cxxflags --ldflags --libs core irreader support --system-libs)
 ```
 
 ## Run
@@ -26,7 +27,7 @@ clang++ func_lister.cpp -o func_lister $(llvm-config --cxxflags --ldflags --libs
 ## Expected Output
 
 ```text
-Functions found in module 'Pre-test-02/input.ll':
+Functions found in module 'input.ll':
  [decl] i32 @puts(ptr)
  [decl] double @sqrt(double)
  [def] i32 @add(i32 %a, i32 %b)
